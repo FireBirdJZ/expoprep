@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "expo_prep",
+    "slug": "expoprep",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tiramisuzorg.expoprep"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.tiramisuzorg.expoprep"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +38,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "40a43b9d-358e-477d-882a-2c22351a1479"
+      }
+    },
+    "owner": "tiramisuz-org",
+    "updates": {
+      "url": "https://u.expo.dev/40a43b9d-358e-477d-882a-2c22351a1479"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
