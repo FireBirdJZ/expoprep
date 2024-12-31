@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const cors = require("cors");
-// app.use(cors(
+// index.use(cors(
 //     {
 //         origin: "",
 //     }
@@ -13,11 +13,11 @@ app.use(cors(
 ));
 
 app.get("/", (req, res) => {
-    res.render("Howdy");
+    res.send("Howdy");
 });
 
-app.listen(port, () => {
-    console.log('Server started on port ${port}');
+app.listen(PORT, () => {
+    console.log('Server started on port ${PORT}');
 });
 
 
