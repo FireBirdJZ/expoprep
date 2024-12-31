@@ -42,7 +42,8 @@
     "react-native-webview": "13.12.5",
     "expo-dev-client": "~5.0.8",
     "expo-insights": "~0.8.1",
-    "expo-updates": "~0.26.10"
+    "expo-updates": "~0.26.10",
+    "react-native-svg": "15.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
