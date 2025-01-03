@@ -44,7 +44,7 @@ export default function Page() {
 
   // Fetch data when the component mounts
   useEffect(() => {
-    fetch("placeholder")
+    fetch("https://expoprep.onrender.com")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
