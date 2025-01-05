@@ -1,6 +1,7 @@
 // require("dotenv").config({ path: ".env.local" }); //local testing env
 require("dotenv").config({ path: ".env" });
 const express = require("express");
+const rateLimit = require('express-rate-limit');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -8,6 +9,17 @@ const {Pool} = require("pg");
 const chrono = require("chrono-node");
 const cors = require("cors");
 const { isValidTimezone, parseDateInput } = require("./app_helpers");
+
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute window
+    max: 75, // Limit each IP to 75 requests per minute
+    message: {
+        success: false,
+        message: "Too many requests from this IP, please try again later."
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 // index.use(cors(
 //     {
@@ -17,6 +29,8 @@ const { isValidTimezone, parseDateInput } = require("./app_helpers");
 
 app.use(cors(
 ));
+
+app.use(limiter);
 
 const pool = new Pool({
     host: process.env.DATABASE_HOST,
