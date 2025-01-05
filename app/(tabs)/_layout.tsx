@@ -32,14 +32,14 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: 'Home',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+                    title: 'Energy Cost',
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="moon.circle.fill" color={color} />,
                 }}
             />
             <Tabs.Screen
                 name="bar"
                 options={{
-                    title: 'Device Energy Usage',
+                    title: 'Device Usage',
                     tabBarIcon: ({ color }) => <IconSymbol size={28} name="chart.bar.fill" color={color} />,
                 }}
             />
