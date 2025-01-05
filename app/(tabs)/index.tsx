@@ -86,7 +86,7 @@ export default function HomeScreen() {
                 startOpacity={0.9}
                 endOpacity={0.2}
                 noOfSections={4}
-                maxValue={Math.ceil(Math.max(...processedData.chartData.map((d) => d.value)) * 1.2)}
+                maxValue={200}
                 yAxisColor="gray"
                 yAxisThickness={1}
                 yAxisTextStyle={{ color: "gray", fontSize: 10 }}
@@ -123,9 +123,9 @@ export default function HomeScreen() {
 
             {/* Insights Section */}
             <View style={styles.insightsContainer}>
-                <Text style={styles.insightTitle}>Insights</Text>
+                <Text style={styles.insightTitle}>Key Insights:</Text>
                 <Text style={styles.insightText}>
-                    • Total Usage: {processedData.totalUsage.toFixed(2)} kWh
+                    • Total Weekly Usage: {processedData.totalUsage.toFixed(2)} kWh
                 </Text>
                 <Text style={styles.insightText}>
                     • Estimated Cost: {processedData.totalCost.toFixed(0)} NOK
