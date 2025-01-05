@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Dimensions, Platform } from "react-native";
 import { LineChart } from "react-native-gifted-charts";
 import { useEnergy } from "@/hooks/useEnergy";
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { ThemedText } from "@/components/ThemedText";
 
 const PEAK_RATE = 10.5; // NOK per kWh during peak hours
 const OFF_PEAK_RATE = 5.25; // NOK per kWh during off-peak hours
@@ -107,7 +108,8 @@ export default function HomeScreen() {
                     pointerLabelComponent: (items: {
                         value: any;
                         date: React.ReactNode | undefined;
-                        cost: number; }[]) => (
+                        cost: number;
+                    }[]) => (
                         <View style={styles.pointerLabel}>
                             <Text style={styles.pointerLabelText}>{items[0]?.date}</Text>
                             <Text style={styles.pointerLabelValue}>
@@ -123,17 +125,13 @@ export default function HomeScreen() {
 
             {/* Insights Section */}
             <View style={styles.insightsContainer}>
-                <Text style={styles.insightTitle}>Key Insights:</Text>
-                <Text style={styles.insightText}>
-                    • Total Weekly Usage: {processedData.totalUsage.toFixed(2)} kWh
-                </Text>
-                <Text style={styles.insightText}>
-                    • Estimated Cost: {processedData.totalCost.toFixed(0)} NOK
-                </Text>
-                <Text style={styles.insightText}>
+                <ThemedText type="defaultSemiBold">Key Insights:</ThemedText>
+                <ThemedText>• Total Weekly Usage: {processedData.totalUsage.toFixed(2)} kWh</ThemedText>
+                <ThemedText>• Estimated Cost: {processedData.totalCost.toFixed(0)} NOK</ThemedText>
+                <ThemedText>
                     • Tip: Shifting 1.2 kWh to off-peak hours could save up to{" "}
                     {(1.2 * (PEAK_RATE - OFF_PEAK_RATE)).toFixed(0)} NOK per day.
-                </Text>
+                </ThemedText>
             </View>
         </View>
     );
@@ -185,18 +183,7 @@ const styles = StyleSheet.create({
     insightsContainer: {
         marginTop: 20,
         padding: 16,
-        backgroundColor: "#f5f5f5",
         borderRadius: 8,
-    },
-    insightTitle: {
-        fontSize: 16,
-        fontWeight: "bold",
-        marginBottom: 12,
-    },
-    insightText: {
-        fontSize: 14,
-        color: "#4B5563",
-        marginBottom: 8,
-        lineHeight: 20,
+        backgroundColor: "#f5f5f5",
     },
 });

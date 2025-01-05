@@ -45,10 +45,10 @@ export default function TabLayout() {
             />
 
             <Tabs.Screen
-            name="explore"
+            name="heat"
             options={{
-                title: 'Explore',
-                tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+                title: 'Time Patterns',
+                tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar.badge.clock" color={color} />,
             }}
         />
 
